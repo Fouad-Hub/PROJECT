@@ -1,0 +1,38 @@
+body {
+    background-color: #ffe5e1; /* Light pink background */
+    font-family: 'Arial', sans-serif;
+}
+
+h2, p {
+    color: #4a4a4a;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+button.btn-outline-danger {
+    background-color: #ffb3b3;
+    border-color: #ffb3b3;
+}
+
+button.btn-outline-secondary {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+}
+
+button.btn-primary {
+    background-color: #6b4f4f;
+    border-color: #6b4f4f;
+}
+
+button.btn-light {
+    color: #6b4f4f;
+}
+
+.btn-check:checked + .btn-outline-danger,
+.btn-check:checked + .btn-outline-secondary {
+    background-color: #ffb3b3;
+    color: white;
+}
