@@ -16,3 +16,13 @@ body {
     font-weight: bold;
 }
 
+
+.about-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffa500;
+    border: 1px solid #ffa500;
+    text-align: left;
+    max-width: 600px;
+}
