@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style/aboutus-style.css"> 
+    <style>
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .about-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            color: #ffa500;
+            border: 1px solid #ffa500;
+            text-align: left;
+            max-width: 600px;
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GameZone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h1>About Us</h1>
+        <div class="about-container">
+            <div class="about-box">
+                <p>Welcome to GameZone Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis temporibus, dolore distinctio vitae autem sit laborum ea soluta quis ex iusto minima fugiat amet, illum accusamus, quisquam odio doloribus? Necessitatibus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quis reiciendis delectus, assumenda nostrum quia sapiente hic omnis autem soluta ipsam ut commodi quidem error itaque distinctio fugit vel aliquid.</p>
+            </div>
+            <div class="about-box">
+                <p><!-- Add your information here for the right box --></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

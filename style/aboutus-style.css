@@ -1,0 +1,28 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: orange;
+}
+
+
+.navbar {
+    background-color: #1a1a1a;
+    padding: 0.5cm;
+}
+
+.navbar-brand {
+    font-size: 0.6cm;
+    font-weight: bold;
+}
+
+
+.about-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffa500;
+    border: 1px solid #ffa500;
+    text-align: left;
+    max-width: 600px;
+}
