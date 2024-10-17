@@ -2,10 +2,14 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
+    background: radial-gradient(circle at center, rgba(208, 0, 255, 0.2), rgba(0, 0, 0, 0.9) 80%), #121212;
     color: #fff;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
+
 
 /* Navbar */
 .navbar {
@@ -14,95 +18,121 @@ body {
 }
 
 .navbar-brand {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
+}
+
+.navbar-nav a {
+    transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    color: #ff5500;
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 500px;
+    width: 100%;
+    height: 90vh; 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
+    overflow: hidden; 
+    
 }
 
 .hero-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.hero-section .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    object-fit: cover; 
+    z-index: -1; 
 }
 
 .hero-section .content {
-    position: relative;
-    z-index: 1;
+    z-index: 1; 
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 0; 
+}
+
+
 .hero-section h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5cm;
 }
 
 .hero-section p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 0.6cm;
 }
 
-/* Carousel Section */
-.carousel-section {
-    background-color: #1a1a1a;
-    padding: 2rem 0;
-}
 
-.carousel-item img {
-    max-height: 500px;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 15px;
-}
-
+/* Carousel Caption Styling */
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    padding: 10px;
-    bottom: 10%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    color: #f1f1f1; /* Light color for readability */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
 }
 
 .carousel-caption h5 {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff5500;
+    margin-bottom: 0.5rem;
 }
 
 .carousel-caption p {
     font-size: 1rem;
-    color: white;
+    margin-bottom: 0;
 }
+
+/* Carousel Image Styling */
+.carousel-item img {
+    width: 100%; 
+    height: 450px; /* Set a smaller height for laptop displays */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the container */
+    border-radius: 10px;
+}
+
+/* Adjust carousel height for smaller screens */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* Smaller height for mobile screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        height: 250px; /* Further reduce height for very small screens */
+    }
+}
+
+
 
 /* News Section */
 .news-section {
-    background-color: #121212;
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 .news-item {
     background-color: #1a1a1a;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -122,7 +152,7 @@ body {
 }
 
 .news-item h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #ff5500;
     margin-bottom: 0.5rem;
 }
@@ -130,6 +160,36 @@ body {
 .news-item p {
     font-size: 1rem;
     color: #ddd;
+}
+
+/* Sidebar Widgets */
+.sidebar-widget {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.sidebar-widget h4 {
+    color: #ff5500;
+    margin-bottom: 1rem;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-widget ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.sidebar-widget ul li a:hover {
+    color: #ff5500;
+    text-decoration: underline;
 }
 
 /* Footer */
