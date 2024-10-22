@@ -7,33 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style/news-style.css">
+    <script src="js/menu&footerScript.js"></script>
+    <script src="js/Newspage.js"></script>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">GameZone</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav id="menu"></nav>
+
+    <br><br><br>
+    
 
     <!-- Hero Section -->
-     
     <header class="hero-section">
-        <img src="img/newspagecoverimage.jpg" alt="News Background" class="img-fluid">
-        <div class="overlay"></div>
+        <img src="img/News images/newspagecoverimage.jpg" alt="News Background" class="img-fluid">
+        <div class="overlay green-line-block"></div>
         <div class="content">
             <h1>Latest Gaming News</h1>
             <p>Stay updated with the gaming world</p>
@@ -43,11 +31,19 @@
     <!-- News Carousel Section -->
     <section class="carousel-section py-5">
         <div class="container">
-            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Carousel Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                </ol>
+    
+                <!-- Carousel Inner Items -->
                 <div class="carousel-inner">
                     <!-- Carousel Item 1 -->
                     <div class="carousel-item active">
-                        <img src="img/Gta6image.jpg" class="d-block w-100" alt="Game Release 1">
+                        <img src="img/News images/Gta6image.jpg" class="d-block w-100" alt="Game Release 1">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>GTA 6 Leaks</h5>
                             <p>New Gameplay leaked has shocked the fans</p>
@@ -55,7 +51,7 @@
                     </div>
                     <!-- Carousel Item 2 -->
                     <div class="carousel-item">
-                        <img src="img/residentevil4.avif" class="d-block w-100" alt="Game Event">
+                        <img src="img/News images/residentevil4.avif" class="d-block w-100" alt="Game Event">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Game Event</h5>
                             <p>Upcoming event for fans of RPGs.</p>
@@ -63,93 +59,150 @@
                     </div>
                     <!-- Carousel Item 3 -->
                     <div class="carousel-item">
-                        <img src="img/payday3.jpg" class="d-block w-100" alt="Update Announcement">
+                        <img src="img/News images/payday3.jpg" class="d-block w-100" alt="Update Announcement">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Update Announcement</h5>
                             <p>Big Payday3 update coming on October 30</p>
                         </div>
                     </div>
                 </div>
+    
                 <!-- Carousel Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                    <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                    <span class="sr-only"></span>
+                </a>
             </div>
         </div>
     </section>
+    
+    
+    
 
     <!-- News Section with Widgets -->
     <section class="news-section py-5">
-        <div class="container">
+        <div class="custom-container">
             <div class="row">
                 <!-- News Items -->
-                <div class="col-md-8">
+                <div class="main-content">
                     <div class="row">
                         <!-- News Item 1 -->
                         <div class="col-md-4 mb-4">
-                            <div class="news-item">
-                                <img src="img/news1.jpg" class="img-fluid news-image" alt="Game Release 1">
-                                <h3>Game Release 1</h3>
-                                <p>Exciting new game released today!</p>
+                            <div class="news-item" onclick="expandNewsItem(this)">
+                                <img src="img/News images/Dragon-Ball-Sparking-Zero-xQc.png" class="img-fluid news-image" alt="Game Release 1">
+                                <h3>Dragon Ball Sparking Zero’s Rage Quitting Problem...</h3>
+                                <p>Like most fighting games, Dragon Ball: Sparking! Zero has a bit of a rage quitting problem. Part of that is due to the inherently unbalanced roster of 182 characters where some are naturally stronger than others, meaning you can put yourself at a disadvantage by going off-meta. However, most of the issue comes from people simply not being able to accept a loss. The rage quitting problem is one that affects players of all levels, including Twitch and Kick streamer xQC, who in this case, just happens to be the one rage quitting himself.</p>
+                                <p>Qc isn’t exactly known for playing fighting games, but Dragon Ball: Sparking! Zero has been part of his rotation as of late ever since it released. One of his clips made it to the Sparking! Zero subreddit, where other players watched him go off on people who were using “cheese” to win fights.</p>
                             </div>
                         </div>
+                        
+                        
                         <!-- News Item 2 -->
                         <div class="col-md-4 mb-4">
-                            <div class="news-item">
-                                <img src="img/news2.jpg" class="img-fluid news-image" alt="Game Event">
-                                <h3>Game Event</h3>
-                                <p>Upcoming event for fans of RPGs.</p>
+                            <div class="news-item" onclick="expandNewsItem(this)">
+                                <img src="img/News images/Gotham-Knights-Killer-Moth.png" class="img-fluid news-image" alt="Game Release 2">
+                                <h3>Gotham Knights Features Mysterious Killer Moth!</h3>
+                                <p>Killer Moth, the classic Batman villain, has been spotted in the upcoming Gotham Knights game...</p>
                             </div>
                         </div>
                         <!-- News Item 3 -->
                         <div class="col-md-4 mb-4">
-                            <div class="news-item">
-                                <img src="img/news3.jpg" class="img-fluid news-image" alt="Update Announcement">
-                                <h3>Update Announcement</h3>
-                                <p>New patch update for a popular game.</p>
+                            <div class="news-item" onclick="expandNewsItem(this)">
+                                <img src="img/News images/Hogwarts-legacy-spellcasting.png" class="img-fluid news-image" alt="Game Release 3">
+                                <h3>Hogwarts Legacy's Spellcasting System Impresses Fans!</h3>
+                                <p>Hogwarts Legacy promises to revolutionize spellcasting mechanics in open-world RPGs...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="news-item" onclick="expandNewsItem(this)">
+                                <img src="img/News images/Starfield-release.png" class="img-fluid news-image" alt="Game Release 4">
+                                <h3>Starfield Gets a Confirmed Release Date: Here’s What You Should Know</h3>
+                                <p>After years of anticipation, Bethesda has finally announced the official release date for Starfield...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="news-item" onclick="expandNewsItem(this)">
+                                <img src="img/News images/Final-Fantasy-XVI-release.png" class="img-fluid news-image" alt="Game Release 5">
+                                <h3>Final Fantasy XVI Release Date and Gameplay Breakdown</h3>
+                                <p>Final Fantasy fans rejoice! The long-awaited Final Fantasy XVI is officially on its way...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="news-item" onclick="expandNewsItem(this)">
+                                <img src="img/News images/Overwatch-2-new-hero.png" class="img-fluid news-image" alt="Game Release 6">
+                                <h3>Overwatch 2 Introduces New Hero with Game-Changing Abilities</h3>
+                                <p>Blizzard has revealed a brand new hero in Overwatch 2, and their abilities might just change the game...</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Sidebar Widget for Popular Games -->
-                <div class="col-md-4">
-                    <div class="sidebar-widget">
-                        <h4>Popular Games</h4>
-                        <ul>
-                            <li><a href="#">Cyberpunk 2077</a></li>
-                            <li><a href="#">Elden Ring</a></li>
-                            <li><a href="#">Doom Eternal</a></li>
-                            <li><a href="#">Resident Evil Village</a></li>
-                            <li><a href="#">Final Fantasy 16</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Recent Posts Widget -->
-                    <div class="sidebar-widget mt-4">
-                        <h4>Recent Posts</h4>
-                        <ul>
-                            <li><a href="#">GTA 6 Confirmed Release Date</a></li>
-                            <li><a href="#">Game Awards 2024 Predictions</a></li>
-                            <li><a href="#">New Graphics Engine for Horizon 5</a></li>
-                        </ul>
-                    </div>
-                </div>
+    
+            <!-- Expandable News Modal -->
+        <div id="expandedNewsModal" class="expanded-news-modal">
+            <div class="expanded-news-content">
+                <span class="close-btn" onclick="closeExpandedNews()">&times;</span>
+                <div id="expandedNewsDetails"></div>
             </div>
         </div>
     </section>
 
+    <div class="gta-countdown-container">
+        <h1 id="gta-headline">Countdown to GTA 6 Release</h1>
+        <div id="gta-countdown">
+          <ul>
+            <li><span id="gta-days"></span>days</li>
+            <li><span id="gta-hours"></span>Hours</li>
+            <li><span id="gta-minutes"></span>Minutes</li>
+            <li><span id="gta-seconds"></span>Seconds</li>
+          </ul>
+        </div>
+        <div id="gta-content" class="gta-emoji">
+          <span>🚗</span>
+          <span>🎮</span>
+          <span>🏙️</span>
+        </div>
+      </div>
+      
+      
+      
+
+  
+      
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <section class="news-letter" id="News-letter">
+        <div class="news">
+          <div class="container">
+            <h1 class="news-heading">Subscribe To Get The Latest <br>Hottest Gaming News</h1>
+            <p class="des how-de">Get the Latest gaming news first from us straight to your inbox, drop your <br> email below to
+              get weekly updates</p>
+      
+            <form id="newsletter-form" onsubmit="submitEmail(event);">
+              <input type="email" id="email-input" maxlength="50" required placeholder="Enter your email address">
+              <button class="bt" type="submit">Subscribe</button>
+              <p id="emailMessage" style="display:none;"></p> <!-- Message will be shown here -->
+            </form>
+          </div>
+        </div>
+      </section>
+ 
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-4">
         <div class="container text-center">
             <p>&copy; 2024 GameZone. All rights reserved.</p>
         </div>
     </footer>
+
+</div>
+
 
 </body>
 </html>

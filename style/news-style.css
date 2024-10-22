@@ -1,4 +1,4 @@
-/* General Styles */
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -10,6 +10,132 @@ body {
     overflow-x: hidden;
 }
 
+
+/* Small News Component Styles */
+.news-item {
+    background-color: #000000;
+    padding: 20px;
+    margin: 10px;
+    border-top: 3px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+    border-top: 3px solid #00FF00;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+}
+
+.news-item h3 {
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.news-item p {
+    color: #aaaaaa;
+}
+
+/* Expandable News Modal */
+.expanded-news-modal {
+    display: none;
+    position: fixed;
+    top: 20px; /* Add space from the top */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    overflow-y: auto; /* Allows scrolling if modal content is long */
+}
+
+.expanded-news-content {
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 900px;
+    padding: 20px;
+    animation: expandModal 0.4s ease;
+    position: relative;
+    max-height: 80vh; /* Limit modal height */
+    overflow-y: auto; /* Ensure long content is scrollable */
+}
+
+@keyframes expandModal {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+@keyframes collapseModal {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.8); opacity: 0; }
+}
+
+/* Close Button for Modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ff5500;
+    cursor: pointer;
+    z-index: 11; /* Make sure it's above the modal content */
+}
+
+.close-btn:hover {
+    color: #ff0000; /* Change color on hover for better visibility */
+}
+
+/* Newsletter Subscription Message */
+.email-message {
+    margin-top: 10px;
+    color: #48b774;
+    font-size: 1rem;
+}
+
+#emailMessage {
+    display: none;
+}
+
+
+.news-heading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.des {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-letter input[type="email"] {
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.bt {
+    background-color: #00FF00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bt:hover {
+    background-color: #00cc00;
+}
 
 /* Navbar */
 .navbar {
@@ -41,15 +167,14 @@ body {
     text-align: center;
     color: white;
     overflow: hidden; 
-    
 }
 
 .hero-section img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 2;
+    left: 2;
+    width: 90%;
+    height: 80%;
     object-fit: cover; 
     z-index: -1; 
 }
@@ -68,7 +193,6 @@ body {
     z-index: 0; 
 }
 
-
 .hero-section h1 {
     font-size: 3rem;
     margin-bottom: 0.5cm;
@@ -79,14 +203,22 @@ body {
     margin-bottom: 0.6cm;
 }
 
+/* Carousel Styling */
+.carousel-indicators li {
+    list-style-type: none; 
+    margin: 0 5px;
+    background-color: #ffffff; 
+}
 
-/* Carousel Caption Styling */
+.carousel-indicators {
+    justify-content: center; 
+}
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 20px;
     border-radius: 8px;
     display: inline-block;
-    color: #f1f1f1; /* Light color for readability */
+    color: #f1f1f1;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: left;
@@ -104,26 +236,32 @@ body {
 
 /* Carousel Image Styling */
 .carousel-item img {
-    width: 100%; 
-    height: 450px; /* Set a smaller height for laptop displays */
-    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the container */
+    width: 100%;
+    height: 450px; 
+    object-fit: cover;
     border-radius: 10px;
 }
 
-/* Adjust carousel height for smaller screens */
 @media (max-width: 768px) {
     .carousel-item img {
-        height: 300px; /* Smaller height for mobile screens */
+        height: 300px; 
     }
 }
 
 @media (max-width: 576px) {
     .carousel-item img {
-        height: 250px; /* Further reduce height for very small screens */
+        height: 250px; 
     }
 }
 
-
+/* Green line block for bigger components */
+.green-line-block {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    border-bottom: 3px solid #00FF00;
+    margin-bottom: 20px;
+}
 
 /* News Section */
 .news-section {
@@ -131,16 +269,18 @@ body {
 }
 
 .news-item {
-    background-color: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #000000;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid transparent;
+    border-top: 3px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;
 }
 
 .news-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+    border-top: 3px solid #00FF00;
 }
 
 .news-item img {
@@ -162,40 +302,148 @@ body {
     color: #ddd;
 }
 
-/* Sidebar Widgets */
-.sidebar-widget {
-    background-color: #1a1a1a;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+/* Container that holds the content */
+.custom-container {
+    width: 100%; /* Full width of the screen */
+    margin-top: 20px;
 }
 
-.sidebar-widget h4 {
-    color: #ff5500;
-    margin-bottom: 1rem;
+/* Main Content, now full width */
+.main-content {
+    width: 100%; /*  up the full width */
+    padding: 0 20px; /* Add some padding to prevent content from touching the edges */
 }
 
-.sidebar-widget ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar-widget ul li a {
+/* Newsletter Section */
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #a69d9d;
+  }
+  .news {
+    padding: 4.8px 0 9.6px 0;
+    text-align: center;
+  }
+  .news-heading {
+    font-size: 44px;
+    line-height: 1.4;
+  
+    color: #fffbfb;
+  }
+  .news p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    margin-top: 12px;
+    line-height: 1.8;
+  }
+  
+  input[type="email"] {
+    display: inline-block;
+    width: 60%;
+    padding: 18px 36px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 70px;
+    margin-top: 18px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
+  }
+  input,
+  input::-webkit-input-placeholder {
+    font-size: 16px;
+    line-height: 3;
+  }
+  
+  .bt {
+    margin-left: -160px;
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 20px;
+  
+    /* Only necessary for .btn */
+    border: none;
+    cursor: pointer;
+    background-color: #48b774;
     color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 5px 0;
-}
+  }
+  
 
-.sidebar-widget ul li a:hover {
-    color: #ff5500;
-    text-decoration: underline;
-}
+  /* Countdown Timer Styling */
+.gta-countdown-container {
+    color: #333;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #ff984f;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  #gta-headline {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+  }
+  
+  #gta-countdown ul {
+    padding: 0;
+  }
+  
+  #gta-countdown li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  #gta-countdown li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+  
+  .gta-emoji {
+    display: none;
+    padding: 1rem;
+  }
+  
+  .gta-emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+  }
+  
+  @media all and (max-width: 768px) {
+    #gta-headline {
+      font-size: calc(1.5rem * 0.75);
+    }
+  
+    #gta-countdown li {
+      font-size: calc(1.125rem * 0.75);
+    }
+  
+    #gta-countdown li span {
+      font-size: calc(3.375rem * 0.75);
+    }
+  }
+  
 
 /* Footer */
 .footer {
     background-color: #1a1a1a;
-    color: white;
+    padding: 1rem;
     text-align: center;
-    padding: 1rem 0;
+    color: #ddd;
 }
+
+.footer p {
+    margin: 0;
+}
+
+
+
+
+  
