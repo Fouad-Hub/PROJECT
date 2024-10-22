@@ -7,6 +7,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style/aboutus-style.css"> 
+    <style>
+        .about-box {
+            opacity: 0; /* Initially hide the boxes */
+            transform: translateY(20px); /* Move down slightly */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
+        }
+
+        .fade-in {
+            opacity: 1; /* Full visibility */
+            transform: translateY(0); /* Move back to original position */
+        }
+
+        /* Additional styling for the counters */
+        .counter-container {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!--Navbar-->
@@ -33,42 +50,101 @@
         <img src="img/istockphoto-1324673294-612x612.jpg" alt="About us Background" class="img-fluid">
         <div class="overlay"></div>
         <div class="content">
-           <h1>About us</h1>
+           <h1>About Us</h1>
         </div>
     </header>
 
     <div class="container mt-5 pt-5">
-        <h1>Description</h1>
-        <div class="about-container">
-            <div class="about-box">
-                <p>Welcome to GameZone Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis temporibus, dolore distinctio vitae autem sit laborum ea soluta quis ex iusto minima fugiat amet, illum accusamus, quisquam odio doloribus? Necessitatibus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quis reiciendis delectus, assumenda nostrum quia sapiente hic omnis autem soluta ipsam ut commodi quidem error itaque distinctio fugit vel aliquid.</p>
+        <!-- About and Team Section -->
+        <div class="about-container mt-5">
+            <!-- Description Box -->
+            <div class="about-box" id="who-we-are-box">
+                <h2 style="color: #ffa500;">Who We Are</h2>
+                <p>Welcome to GameZone! We are a team of passionate gamers and developers dedicated to bringing the best gaming experiences to players worldwide. Our goal is to create a community where players can connect, share, and enjoy the games they love. From the latest releases to timeless classics, GameZone is your ultimate destination for all things gaming.</p>
             </div>
-            <div class="about-box">
-                <h1>Meet Our Team</h1> <!-- Title for the second box -->
+
+            <!-- Total Visits Counter Box -->
+            <div class="about-box" id="total-visits-box">
+                <h2 style="color: #ffa500;">Total Visits</h2>
+                <div class="counter-container">
+                    <span id="visits-counter">0</span>
+                    <p>Visits</p>
+                </div>
+            </div>
+
+            <!-- Products Bought Counter Box -->
+            <div class="about-box" id="products-bought-box">
+                <h2 style="color: #ffa500;">Products Bought</h2>
+                <div class="counter-container">
+                    <span id="products-counter">0</span>
+                    <p>Products Bought</p>
+                </div>
+            </div>
+
+            <!-- Meet the Team Box -->
+            <div class="about-box" id="meet-our-team-box">
+                <h2 style="color: #ffa500;">Meet Our Team</h2>
                 <div class="team-container">
                     <!-- Team Member 1 -->
                     <div class="team-member">
                         <img src="img/Secret_Characters.webp" alt="Team Member 1">
-                        <h5>Karman Dwivedi</h5>
+                        <h5>Name 1</h5>
+                        <p>Founder</p>
                     </div>
                     <!-- Team Member 2 -->
                     <div class="team-member">
                         <img src="img/Secret_Characters.webp" alt="Team Member 2">
-                        <h5>???????</h5>
+                        <h5>Name 2</h5>
+                        <p>Founder</p>
                     </div>
                     <!-- Team Member 3 -->
                     <div class="team-member">
                         <img src="img/Secret_Characters.webp" alt="Team Member 3">
-                        <h5>???????</h5>
+                        <h5>Name 3</h5>
+                        <p>Founder</p>
                     </div>
                     <!-- Team Member 4 -->
                     <div class="team-member">
                         <img src="img/Secret_Characters.webp" alt="Team Member 4">
-                        <h5>???????</h5>
+                        <h5>Name 4</h5>
+                        <p>Founder</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Function to animate counters
+        function animateCounter(counterElement, target) {
+            let count = 0;
+            const increment = target / 100;  // Adjust speed
+            const counterInterval = setInterval(() => {
+                count += increment;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(counterInterval);
+                }
+                counterElement.innerText = Math.floor(count);
+            }, 50);  // Interval time in milliseconds
+        }
+
+        // Fade-in effect for boxes
+        window.onload = function() {
+            const boxes = document.querySelectorAll('.about-box');
+            boxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.classList.add('fade-in'); // Add the fade-in class
+                }, index * 500); // Stagger the fade-in effect
+            });
+
+            const visitsCounterElement = document.getElementById('visits-counter');
+            const productsCounterElement = document.getElementById('products-counter');
+
+            animateCounter(visitsCounterElement, 10000); // Visits counter to 10,000
+            animateCounter(productsCounterElement, 5000); // Products bought counter to 5,000
+        }
+    </script>
+
 </body>
 </html>
