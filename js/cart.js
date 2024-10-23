@@ -62,16 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.remove-item').forEach(trashIcon => {
             trashIcon.addEventListener('click', (event) => {
                 const productId = trashIcon.getAttribute('data-product-id');
-                removeItemFromCart(productId);
+                removeOneItemFromCart(productId);
             });
         });
     }
 
-    // Remove item from cart function
-    function removeItemFromCart(productId) {
-        const productIndex = cart.findIndex(item => item.id === productId);
-        if (productIndex > -1) {
-            cart.splice(productIndex, 1);
+    // Remove one quantity of the item from the cart function
+    function removeOneItemFromCart(productId) {
+        const product = cart.find(item => item.id === productId);
+        if (product) {
+            product.quantity--;
+
+            // If quantity becomes 0, remove the product entirely
+            if (product.quantity === 0) {
+                const productIndex = cart.findIndex(item => item.id === productId);
+                cart.splice(productIndex, 1);
+            }
         }
         updateCartUI();
     }
