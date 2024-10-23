@@ -375,10 +375,10 @@ body {
 
   /* Countdown Timer Styling */
 .gta-countdown-container {
-    color: #333;
+    color: #ff9046;
     margin: 20px auto;
     text-align: center;
-    background-color: #ff984f;
+    
     padding: 20px;
     border-radius: 8px;
   }
