@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style/news-style.css">
     <script src="js/menu&footerScript.js"></script>
     <script src="js/Newspage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    
 </head>
 <body>
 
@@ -153,27 +155,28 @@
         </div>
     </section>
 
-    <div class="gta-countdown-container">
+    
+    <div id="fireworks-container" style="position: relative; width: 100%; height: 50vh;">
+        <div class="gta-countdown-container">
         <h1 id="gta-headline">Countdown to GTA 6 Release</h1>
-        <div id="gta-countdown">
-          <ul>
-            <li><span id="gta-days"></span>days</li>
-            <li><span id="gta-hours"></span>Hours</li>
-            <li><span id="gta-minutes"></span>Minutes</li>
-            <li><span id="gta-seconds"></span>Seconds</li>
-          </ul>
-        </div>
-        <div id="gta-content" class="gta-emoji">
-          <span>🚗</span>
-          <span>🎮</span>
-          <span>🏙️</span>
-        </div>
-      </div>
-      
-      
-      
+            <div id="gta-countdown">
+              <ul>
+                <li><span id="gta-days"></span>days</li>
+                <li><span id="gta-hours"></span>Hours</li>
+                <li><span id="gta-minutes"></span>Minutes</li>
+                <li><span id="gta-seconds"></span>Seconds</li>
+              </ul>
+            </div>
+            <div id="gta-content" class="gta-emoji">
+              <span>🚗</span>
+              <span>🎮</span>
+              <span>🏙️</span>
+            </div>
+          </div>
+    </div>
+    
 
-  
+    
       
 
 
@@ -181,8 +184,8 @@
     <section class="news-letter" id="News-letter">
         <div class="news">
           <div class="container">
-            <h1 class="news-heading">Subscribe To Get The Latest <br>Hottest Gaming News</h1>
-            <p class="des how-de">Get the Latest gaming news first from us straight to your inbox, drop your <br> email below to
+            <h1 class="news-heading">Subscribe To Get The Latest And The<br>Hottest Gaming News</h1>
+            <p class="des how-de">Get all the latest gaming news first from us straight to your inbox, drop your <br> email below to
               get weekly updates</p>
       
             <form id="newsletter-form" onsubmit="submitEmail(event);">
