@@ -32,3 +32,90 @@ body {
     object-fit: cover; /* Ensure images cover the container without distortion */
 }
 
+/* Product images will have a fixed size */
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensure images maintain aspect ratio and fill the space */
+}
+
+/* Cart Button Styling */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Cart Modal Styling */
+.modal-body-cart {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Style for Navbar (optional) */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.card {
+    cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.7); /* Black with 70% transparency */
+        color: white; /* To ensure text is readable on dark background */
+        border: none; /* Remove the default border if needed */
+    
+    
+}
+
+
+
+/* Modal background and text */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8); /* Black transparent background for modal */
+    color: white; /* White text for better contrast */
+    border: none; /* Remove any borders */
+}
+
+/* Consistent modal size for all modals */
+.modal-lg {
+    max-width: 800px; /* Set a fixed size for large modals */
+}
+
+/* Ensure image fits well inside the modal */
+.modal-body img {
+    width: 100%; /* Make the image responsive within the modal */
+    height: auto;
+}
+
+/* Adjust modal header text */
+.modal-header {
+    border-bottom: none; /* Remove bottom border from modal header */
+}
+
+/* Adjust modal footer if any */
+.modal-footer {
+    border-top: none; /* Remove top border from modal footer */
+}
+
+#cart {
+    z-index: 1000; /* Ensure the cart button is always on top */
+}
+
+.cart-button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
+}
+
+body {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
