@@ -41,7 +41,7 @@ body {
 
 .hero-section {
     position: relative;
-    height: 300px; /* Adjusted height for a smaller header */
+    height: 500px; /* Adjusted height for a smaller header */
     overflow: hidden;
 }
 
@@ -120,4 +120,36 @@ body {
 
 .counter-container {
     text-align: center;
+}
+
+
+.nav-link {
+    position: relative;
+    color: white; 
+}
+
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffa500; 
+    visibility: visible;
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffa500; 
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
 }

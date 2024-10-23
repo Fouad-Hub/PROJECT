@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style/aboutus-style.css"> 
-    <style>
-        .about-box {
-            opacity: 0; /* Initially hide the boxes */
-            transform: translateY(20px); /* Move down slightly */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation transition */
-        }
-
-        .fade-in {
-            opacity: 1; /* Full visibility */
-            transform: translateY(0); /* Move back to original position */
-        }
-
-        /* Additional styling for the counters */
-        .counter-container {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style/aboutus-style.css">
 </head>
 <body>
     <!--Navbar-->
@@ -69,6 +55,15 @@
                 <div class="counter-container">
                     <span id="visits-counter">0</span>
                     <p>Visits</p>
+                    <h5 style="color: #ffa500;">Most Frequent Visitors by Country:</h5>
+                    <ul>
+                        <li>United States</li>
+                        <li>Canada</li>
+                        <li>United Kingdom</li>
+                        <li>Australia</li>
+                        <li>Germany</li>
+                    </ul>
+                    
                 </div>
             </div>
 
@@ -78,6 +73,20 @@
                 <div class="counter-container">
                     <span id="products-counter">0</span>
                     <p>Products Bought</p>
+                </div>
+                <div>
+                    <h5 style="color: #ffa500;">Most Bought Products:</h5>
+                    <ul>
+                        <li>Gaming PCs</li>
+                        <li>Gaming Chairs</li>
+                        <li>Gaming Headsets</li>
+                        <li>Custom Keyboards</li>
+                        <li>High-Performance Mice</li>
+                    </ul>
+                </div>
+                <!-- Shop Now Button -->
+                <div class="mt-3">
+                    <a href="shop.html" class="btn btn-warning">Shop Now</a>
                 </div>
             </div>
 
@@ -113,12 +122,17 @@
             </div>
         </div>
     </div>
-
+  <!-- Footer -->
+<footer class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 GameZone. All rights reserved.</p>
+    </div>
+</footer>
     <script>
         // Function to animate counters
         function animateCounter(counterElement, target) {
             let count = 0;
-            const increment = target / 100;  // Adjust speed
+            const increment = target / 50;  // Adjust speed
             const counterInterval = setInterval(() => {
                 count += increment;
                 if (count >= target) {
