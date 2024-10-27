@@ -166,3 +166,58 @@ body {
 }
 
 
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #ff5500; /* Set button color */
+    color: #fff; /* Text color inside the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a transition for smooth hover effect */
+}
+
+.add-to-cart:hover {
+    background-color: #cc4400; /* Darker shade on hover */
+}
+
+/* Cart Background */
+.cart {
+    background-color: #ff5500; /* Set cart background to the specified color */
+    color: #ffffff; /* Text color inside the cart */
+    padding: 20px; /* Add padding for better layout */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+
+/* Update the total amount */
+#cart-total {
+    font-size: 1.2rem; /* Increase font size for emphasis */
+    color: #ff5500; /* Ensure the total matches */
+}
+
+.cart-icon {
+    background-color: #ff5500; /* Set the cart icon's background color */
+    color: #ffffff; /* Icon color */
+    padding: 10px; /* Optional padding */
+    border-radius: 50%; /* Optional: round shape */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.cart-icon:hover {
+    background-color: #cc4400; /* Darker shade on hover */
+}
+
+/* Cart Button */
+.btn-primary {
+    background-color: #ff5500; /* Set the background color */
+    color: #ffffff; /* Set the text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #cc4400; /* Darker shade on hover */
+}
