@@ -2,7 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
-    background: radial-gradient(circle at center, rgba(208, 0, 255, 0.2), rgba(0, 0, 0, 0.9) 80%), #121212;
+    background: radial-gradient(circle at center, rgba(208, 0, 255, 0.2), rgba(0, 0, 0, 0.9) 115%), #121212;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -94,35 +94,12 @@ body {
     color: #ff0000; /* Change color on hover for better visibility */
 }
 
-/* Newsletter Subscription Message */
-.email-message {
-    margin-top: 10px;
-    color: #48b774;
-    font-size: 1rem;
-}
-
-#emailMessage {
-    display: none;
-}
-
-
-.news-heading {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 .des {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.news-letter input[type="email"] {
-    padding: 10px;
-    width: 70%;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #cccccc;
-}
+
 
 .bt {
     background-color: #00FF00;
@@ -266,16 +243,25 @@ body {
 /* News Section */
 .news-section {
     padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust based on the desired minimum width */
+    gap: 1.5em; /* Space between items */
+  
 }
 
 .news-item {
     background-color: #000000;
     padding: 20px;
-    margin: 10px;
-    border: 2px solid transparent;
+    margin: 0; /* Remove margin to prevent spacing inconsistencies */
     border-top: 3px solid transparent;
     transition: transform 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    height: 100%; /* Ensures the item takes up the full height of the grid cell */
 }
+
 
 .news-item:hover {
     transform: scale(1.05);
@@ -285,9 +271,9 @@ body {
 
 .news-item img {
     width: 100%;
-    border-radius: 10px;
+    height: 200px; /* Set a fixed height for consistent image sizing */
     object-fit: cover;
-    height: 200px;
+    border-radius: 10px;
     margin-bottom: 1rem;
 }
 
@@ -295,12 +281,16 @@ body {
     font-size: 1.5rem;
     color: #ff5500;
     margin-bottom: 0.5rem;
+    text-align: center; /* Center-align the heading for symmetry */
 }
 
 .news-item p {
     font-size: 1rem;
     color: #ddd;
+    text-align: left; /* Center-align paragraph text */
+    margin: 0;
 }
+
 
 /* Container that holds the content */
 .custom-container {
@@ -326,6 +316,7 @@ body {
     text-align: center;
   }
   .news-heading {
+    padding-top: 4rem;
     font-size: 44px;
     line-height: 1.4;
   
@@ -368,9 +359,27 @@ body {
     /* Only necessary for .btn */
     border: none;
     cursor: pointer;
-    background-color: #48b774;
+    background-color: #0dc256;
     color: #fff;
   }
+  
+  .news-letter input[type="email"] {
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+  /* Newsletter Subscription Message */
+  .email-message {
+    margin-top: 10px;
+    color: #12ff5d;
+    font-size: 1rem;}
+    
+  #emailMessage {
+    display: none; }
+  
   
 
   /* Countdown Timer Styling */
@@ -378,12 +387,12 @@ body {
     color: #ff9046;
     margin: 20px auto;
     text-align: center;
-    
     padding: 20px;
     border-radius: 8px;
   }
   
   #gta-headline {
+    padding-top: 5rem;
     font-weight: normal;
     letter-spacing: .125rem;
     text-transform: uppercase;
@@ -430,6 +439,37 @@ body {
     }
   }
   
+
+  .video-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px; /* Increase bottom margin for more spacing */
+}
+
+.video-container iframe {
+    width: 520px; /* Adjust width for a smaller size */
+    height: 280px; /* Adjust height accordingly */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.watch-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5500;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.watch-more-button:hover {
+    background-color: #cc4400;
+}
+
+
+
 
 /* Footer */
 .footer {

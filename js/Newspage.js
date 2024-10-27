@@ -64,8 +64,9 @@ function submitEmail(event) {
     if (emailPattern.test(emailInput)) {
         // Show confirmation message
         emailMessage.innerHTML = "Subscription successful! Please check your inbox.";
-        emailMessage.style.color = "green"; // Success message color
         emailMessage.style.display = "block";
+
+        event.target.reset(); // Clear the field
 
         // Hide message after 4 seconds
         setTimeout(function() {
