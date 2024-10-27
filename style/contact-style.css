@@ -1,38 +1,97 @@
 body {
-    background-color: #ffe5e1; /* Light pink background */
-    font-family: 'Arial', sans-serif;
+    background: linear-gradient(10deg, #BB1881, #df6726);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-h2, p {
-    color: #4a4a4a;
+.contact-heading {
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 1em;
 }
 
-form {
-    background-color: #fff;
-    border-radius: 10px;
+
+.contact-wrapper {
+    width: 100%;
+    max-width: 30em;
+    margin: 2em auto; 
+    margin-top: 7em;
+    padding: 2em;
+    padding-top: 3em;
+    background-color: #03A9F5;
+    border-radius: 0.5em;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
 }
 
-button.btn-outline-danger {
-    background-color: #ffb3b3;
-    border-color: #ffb3b3;
+.content {
+    position: relative;
 }
 
-button.btn-outline-secondary {
-    background-color: #e5e5e5;
-    border-color: #e5e5e5;
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #fff;
+    font-weight: bold;
 }
 
-button.btn-primary {
-    background-color: #6b4f4f;
-    border-color: #6b4f4f;
+form input,
+form textarea {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 0.1em solid #fff;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    outline: none;
 }
 
-button.btn-light {
-    color: #6b4f4f;
+form textarea {
+    border: 0.1em solid #fff;
+    border-radius: 0.25em;
 }
 
-.btn-check:checked + .btn-outline-danger,
-.btn-check:checked + .btn-outline-secondary {
-    background-color: #ffb3b3;
-    color: white;
+.submit-card {
+    background: #fff;
+    color: #222;
+    text-align: center;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+}
+
+.submit-card:hover {
+    background: #03f578;
+    color: #fff;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    width: 100%;
+}
+
+.submission-message {
+    text-align: center;
+    color: #ffffff;
+    background-color: #03A9F5;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    margin-top: 1em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+}
+.submission-message.show {
+    opacity: 1;
 }

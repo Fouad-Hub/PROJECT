@@ -96,7 +96,7 @@ function submitEmail(event) {
     const devDayOffset = 0; // Adjust days for testing (e.g +1, -1)
     const devHourOffset = 0; // Adjust hours for testing (e.g +1 hour from now)
     const devMinuteOffset = 0; // Adjust minutes for testing (e.g +10 minutes from now)
-    const devSecondOffset = 20; // Adjust seconds for testing (e.g +10 seconds from now)
+    const devSecondOffset = 10; // Adjust seconds for testing (e.g +10 seconds from now)
   
     // Get today's date
     let today = new Date();
