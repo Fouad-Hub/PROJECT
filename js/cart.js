@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cart = [];
-    const cartCountElement = document.getElementById('cart-count');
-    const cartItemsElement = document.getElementById('cart-items');
-    const cartTotalElement = document.getElementById('cart-total');
 
-    // Add event listeners to all 'Add to Cart' buttons
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
             const productId = button.getAttribute('data-product-id');
             const productName = button.getAttribute('data-product-name');
             const productPrice = parseFloat(button.getAttribute('data-product-price'));
 
-            // Check if the product is already in the cart
             const existingProduct = cart.find(item => item.id === productId);
 
             if (existingProduct) {
@@ -29,21 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Update the cart UI
             updateCartUI();
         });
     });
 
-    // Update Cart UI function
     function updateCartUI() {
-        // Update cart count badge
-        cartCountElement.textContent = cart.length;
+        const cartCountElement = document.getElementById('cart-count');
+        const cartItemsElement = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
 
-        // Update cart items list
-        cartItemsElement.innerHTML = '';
+        // Calculate total quantity of items in the cart
+        let totalQuantity = 0;
         let total = 0;
 
-        cart.forEach((item, index) => {
+        cartItemsElement.innerHTML = '';
+        
+        cart.forEach((item) => {
+            totalQuantity += item.quantity;
+            total += item.price * item.quantity;
+
             const listItem = document.createElement('li');
             listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
             listItem.innerHTML = `
@@ -51,29 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="bi bi-trash text-danger remove-item" data-product-id="${item.id}"></i>
             `;
             cartItemsElement.appendChild(listItem);
-
-            total += item.price * item.quantity;
         });
+
+        // Update cart count badge with the total quantity
+        cartCountElement.textContent = totalQuantity;
 
         // Update total price
         cartTotalElement.textContent = total.toFixed(2);
 
-        // Add event listeners to remove item buttons
         document.querySelectorAll('.remove-item').forEach(trashIcon => {
-            trashIcon.addEventListener('click', (event) => {
+            trashIcon.addEventListener('click', () => {
                 const productId = trashIcon.getAttribute('data-product-id');
                 removeOneItemFromCart(productId);
             });
         });
     }
 
-    // Remove one quantity of the item from the cart function
     function removeOneItemFromCart(productId) {
         const product = cart.find(item => item.id === productId);
         if (product) {
             product.quantity--;
-
-            // If quantity becomes 0, remove the product entirely
             if (product.quantity === 0) {
                 const productIndex = cart.findIndex(item => item.id === productId);
                 cart.splice(productIndex, 1);
