@@ -30,13 +30,14 @@ body {
 
 .about-box {
     background-color: #333;
-    padding: 20px;
+    padding: 40px; /* Increased padding for larger boxes */
     border-radius: 10px;
     color: #ffa500;
     border: 1px solid #ffa500;
     text-align: left;
-    max-width: 600px;
-    flex: 1;
+    max-width: 800px; /* Increased max-width for larger boxes */
+    flex: 1; /* Allows the box to grow equally */
+    min-width: 300px; /* Adjusted minimum width */
 }
 
 .hero-section {
@@ -117,11 +118,9 @@ body {
     transform: translateY(0); 
 }
 
-
 .counter-container {
     text-align: center;
 }
-
 
 .nav-link {
     position: relative;
